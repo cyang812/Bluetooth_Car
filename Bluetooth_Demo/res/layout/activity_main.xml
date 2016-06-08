@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="数字系统课程设计"
+        android:textColor="#4de891"
+        android:textSize="40sp"
+        android:layout_gravity="center"
+        android:layout_marginTop="37dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="手机蓝牙控制小车移动"
+        android:textColor="#ffd055"
+        android:textSize="25sp"
+        android:layout_gravity="center"
+        android:layout_below="@+id/text1"
+        android:layout_centerHorizontal="true" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_below="@+id/text2">
+
+        <ImageButton
+            android:id="@+id/button00"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/stop"
+            android:layout_centerInParent="true"
+            />
+
+
+        <ImageButton
+            android:id="@+id/imagebutton1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/up"
+            android:layout_above="@id/button00"
+            android:layout_centerHorizontal="true"
+            />
+
+
+        <ImageButton
+            android:id="@+id/imagebutton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/left"
+            android:layout_below="@id/imagebutton1"
+            android:layout_toLeftOf="@id/button00"
+            android:layout_toStartOf="@id/button00"
+            />
+
+        <ImageButton
+            android:id="@+id/imagebutton3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/right"
+            android:layout_below="@id/imagebutton1"
+            android:layout_toRightOf="@id/button00"
+            android:layout_toEndOf="@id/button00"
+            />
+
+        <ImageButton
+            android:id="@+id/imagebutton4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/down"
+            android:layout_below="@id/imagebutton3"
+            android:layout_centerHorizontal="true"/>
+
+        <ImageButton
+            android:id="@+id/imagebutton5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/stop1"
+            android:layout_below="@+id/imagebutton1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
