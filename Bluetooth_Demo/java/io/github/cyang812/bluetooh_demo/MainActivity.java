@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
@@ -21,7 +22,7 @@ import java.util.Arrays;
 import java.util.Set;
 import java.util.UUID;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity  {
 
     public byte[] message = new byte[1];
     private Vibrator vibrator;
@@ -47,21 +48,146 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivityForResult(intent,ENABLE_BLUETOOTH);
             }
 
-
+        ButtonListener bt = new ButtonListener();
         ImageButton qianjin = (ImageButton)findViewById(R.id.imagebutton1);
         ImageButton zuozhuan = (ImageButton)findViewById(R.id.imagebutton2);
         ImageButton youzhuan = (ImageButton)findViewById(R.id.imagebutton3);
         ImageButton houtui = (ImageButton)findViewById(R.id.imagebutton4);
         ImageButton tingzhi = (ImageButton)findViewById(R.id.imagebutton5);
 
-        qianjin.setOnClickListener(this);
-        zuozhuan.setOnClickListener(this);
-        youzhuan.setOnClickListener(this);
-        houtui.setOnClickListener(this);
-        tingzhi.setOnClickListener(this);
+        qianjin.setOnTouchListener(bt);
+        zuozhuan.setOnTouchListener(bt);
+        youzhuan.setOnTouchListener(bt);
+        houtui.setOnTouchListener(bt);
+        tingzhi.setOnTouchListener(bt);
+    }
+
+    class ButtonListener implements View.OnTouchListener {
+
+        public boolean onTouch(View v, MotionEvent event) {
+            switch (v.getId()){
+                case R.id.imagebutton1:
+                    if(event.getAction() == MotionEvent.ACTION_UP){//放开事件
+                        message[0]= (byte) 0x40;//设置要发送的数值
+                        bluesend(message);//发送数值
+                        Log.d("cy08",""+message[0]);
+                    }
+                    if(event.getAction() == MotionEvent.ACTION_DOWN){//按下事件
+                        message[0]= (byte) 0x41;//设置要发送的数值
+                        bluesend(message);//发送数值
+                        Log.d("cy08",""+message[0]);
+                    }
+                    break;
+                case R.id.imagebutton2:
+                    if(event.getAction() == MotionEvent.ACTION_UP){//按下事件
+                        message[0]= (byte) 0x40;//设置要发送的数值
+                        bluesend(message);//发送数值
+                        Log.d("cy08",""+message[0]);
+                    }
+                    if(event.getAction() == MotionEvent.ACTION_DOWN){//放开事件
+                        message[0]= (byte) 0x44;//设置要发送的数值
+                        bluesend(message);//发送数值
+                        Log.d("cy08",""+message[0]);
+                    }
+                    break;
+                case R.id.imagebutton3:
+                    if(event.getAction() == MotionEvent.ACTION_UP){//按下事件
+                        message[0]= (byte) 0x40;//设置要发送的数值
+                        bluesend(message);//发送数值
+                        Log.d("cy08",""+message[0]);
+                    }
+                    if(event.getAction() == MotionEvent.ACTION_DOWN){//放开事件
+                        message[0]= (byte) 0x43;//设置要发送的数值
+                        bluesend(message);//发送数值
+                        Log.d("cy08",""+message[0]);
+                    }
+                    break;
+                case R.id.imagebutton4:
+                    if(event.getAction() == MotionEvent.ACTION_UP){//按下事件
+                        message[0]= (byte) 0x40;//设置要发送的数值
+                        bluesend(message);//发送数值
+                        Log.d("cy08",""+message[0]);
+                    }
+                    if(event.getAction() == MotionEvent.ACTION_DOWN){//放开事件
+                        message[0]= (byte) 0x42;//设置要发送的数值
+                        bluesend(message);//发送数值
+                        Log.d("cy08",""+message[0]);
+                    }
+                    break;
+                case R.id.imagebutton5:
+                    if(event.getAction() == MotionEvent.ACTION_UP){//按下事件
+                        message[0]= (byte) 0x40;//设置要发送的数值
+                        bluesend(message);//发送数值
+                        Log.d("cy08",""+message[0]);
+                    }
+                    if(event.getAction() == MotionEvent.ACTION_DOWN){//放开事件
+                        message[0]= (byte) 0x40;//设置要发送的数值
+                        bluesend(message);//发送数值
+                        Log.d("cy08",""+message[0]);
+                    }
+                    break;
+                default:
+                    break;
+            }
+            return false;
+        }
 
     }
 
+
+//    public void onClick(View v){
+//        switch (v.getId()){
+//            case R.id.imagebutton1:
+//                message[0]= (byte) 0x41;//设置要发送的数值
+//                vibrator();
+//                Toast.makeText(this,"前进",Toast.LENGTH_SHORT).show();
+//                bluesend(message);//发送数值
+//                Log.d("cy08",""+message[0]);
+//                break;
+//
+//            case R.id.imagebutton2:
+//                message[0]= (byte) 0x44;
+//                vibrator();
+//                Toast.makeText(this,"左转",Toast.LENGTH_SHORT).show();
+//                bluesend(message);
+//                Log.d("cy08",""+message[0]);
+//                break;
+//
+//            case R.id.imagebutton3:
+//                message[0]= (byte) 0x43;
+//                vibrator();
+//                Toast.makeText(this,"右转",Toast.LENGTH_SHORT).show();
+//                bluesend(message);
+//                Log.d("cy08",""+message[0]);
+//                break;
+//
+//            case R.id.imagebutton4:
+//                message[0]= (byte) 0x42;
+//                vibrator();
+//                Toast.makeText(this,"后退",Toast.LENGTH_SHORT).show();
+//                bluesend(message);
+//                Log.d("cy08",""+message[0]);
+//                break;
+//
+//            case R.id.imagebutton5:
+//                message[0]= (byte) 0x40;
+//                vibrator();
+//                Toast.makeText(this,"停止",Toast.LENGTH_SHORT).show();
+//                bluesend(message);
+//                Log.d("cy08",""+message[0]);
+//                break;
+//
+//            default:
+//                message[0]= (byte) 0x40;
+//                vibrator();
+//                Toast.makeText(this,"停止",Toast.LENGTH_SHORT).show();
+//                bluesend(message);
+//                Log.d("cy08",""+message[0]);
+//                break;
+//        }
+//    }
+
+    //蓝牙发送数据
     public void bluesend(byte[] message){
         try{
             outputStream = bluetoothSocket.getOutputStream();
@@ -72,62 +198,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    //振动器
     public void vibrator(){
         vibrator = (Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
         vibrator.vibrate(50);
-    }
-
-
-    public void onClick(View v){
-        switch (v.getId()){
-            case R.id.imagebutton1:
-                message[0]= (byte) 0x41;
-                vibrator();
-                Toast.makeText(this,"前进",Toast.LENGTH_SHORT).show();
-                bluesend(message);
-                Log.d("cy08",""+message[0]);
-                break;
-
-            case R.id.imagebutton2:
-                message[0]= (byte) 0x44;
-                vibrator();
-                Toast.makeText(this,"左转",Toast.LENGTH_SHORT).show();
-                bluesend(message);
-                Log.d("cy08",""+message[0]);
-                break;
-
-            case R.id.imagebutton3:
-                message[0]= (byte) 0x43;
-                vibrator();
-                Toast.makeText(this,"右转",Toast.LENGTH_SHORT).show();
-                bluesend(message);
-                Log.d("cy08",""+message[0]);
-                break;
-
-            case R.id.imagebutton4:
-                message[0]= (byte) 0x42;
-                vibrator();
-                Toast.makeText(this,"后退",Toast.LENGTH_SHORT).show();
-                bluesend(message);
-                Log.d("cy08",""+message[0]);
-                break;
-
-            case R.id.imagebutton5:
-                message[0]= (byte) 0x40;
-                vibrator();
-                Toast.makeText(this,"停止",Toast.LENGTH_SHORT).show();
-                bluesend(message);
-                Log.d("cy08",""+message[0]);
-                break;
-
-            default:
-                message[0]= (byte) 0x40;
-                vibrator();
-                Toast.makeText(this,"停止",Toast.LENGTH_SHORT).show();
-                bluesend(message);
-                Log.d("cy08",""+message[0]);
-                break;
-        }
     }
 
     @Override
