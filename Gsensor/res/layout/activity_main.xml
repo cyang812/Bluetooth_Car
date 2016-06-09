@@ -7,64 +7,96 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="io.github.cyang812.gsensor.MainActivity">
+    >
 
     <TextView
         android:id="@+id/text1"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
-
+        android:layout_width="wrap_content"
+        android:text="数字系统课程设计"
+        android:textColor="#4de891"
+        android:textSize="40sp"
+        android:layout_gravity="center"
+        android:layout_marginTop="37dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
     <TextView
         android:id="@+id/text2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        android:layout_below="@id/text1"/>
+        android:text="手机蓝牙控制小车移动"
+        android:textColor="#ffd055"
+        android:textSize="25sp"
+        android:layout_gravity="center"
+        android:layout_below="@+id/text1"
+        android:layout_centerHorizontal="true" />
+
 
     <TextView
-        android:id="@+id/text3"
+        android:id="@+id/textX"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        android:layout_below="@id/text2"/>
+        android:text="X"
+        android:textSize="15sp"
+        android:layout_below="@+id/text2"
+        android:layout_centerHorizontal="true" />
     <TextView
-        android:id="@+id/text4"
+        android:id="@+id/textY"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        android:layout_below="@id/text3"/>
+        android:text="Y"
+        android:textSize="15sp"
+        android:layout_below="@+id/textX"
+        android:layout_alignStart="@+id/textX" />
+    <TextView
+        android:id="@+id/textZ"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Z"
+        android:textSize="15sp"
+        android:layout_below="@+id/textY"
+        android:layout_alignStart="@+id/textY" />
+
 
     <TextView
-        android:id="@+id/text5"
+        android:id="@+id/textUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        android:layout_below="@id/text4"/>
+        android:text="wait_up"
+        android:textSize="15sp"
+        android:layout_below="@+id/textZ"
+        android:layout_alignStart="@+id/textZ" />
+    <TextView
+        android:id="@+id/textLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="wait_left"
+        android:textSize="15sp"
+        android:layout_below="@+id/textUp"
+        android:layout_alignStart="@+id/textUp" />
+    <TextView
+        android:id="@+id/textRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="wait_right"
+        android:textSize="15sp"
+        android:layout_below="@+id/textLeft"
+        android:layout_alignStart="@+id/textLeft" />
+    <TextView
+        android:id="@+id/textDown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="wait_down"
+        android:textSize="15sp"
+        android:layout_below="@+id/textRight"
+        android:layout_alignStart="@+id/textRight" />
+    <TextView
+        android:id="@+id/textStop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="wait_stop"
+        android:textSize="15sp"
+        android:layout_below="@+id/textDown"
+        android:layout_alignStart="@+id/textDown" />
 
-    <TextView
-        android:id="@+id/text6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        android:layout_below="@id/text5"/>
-    <TextView
-        android:id="@+id/text7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        android:layout_below="@id/text6"/>
-    <TextView
-        android:id="@+id/text8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        android:layout_below="@id/text7"/>
-
-    <TextView
-        android:id="@+id/text9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        android:layout_below="@id/text8"/>
 </RelativeLayout>
