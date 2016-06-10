@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/layout_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true">
+
+        <ImageButton
+        android:id="@+id/imagebutton0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/stop"
+        android:layout_centerInParent="true" />
+
+        <ImageButton
+            android:id="@+id/imagebutton1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/up"
+            android:layout_alignParentTop="true"
+            android:layout_alignStart="@+id/imagebutton4" />
+
+        <ImageButton
+            android:id="@+id/imagebutton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/left"
+            android:layout_below="@id/imagebutton1"
+            android:layout_toLeftOf="@id/imagebutton0"
+            android:layout_toStartOf="@id/imagebutton0"
+            />
+
+        <ImageButton
+            android:id="@+id/imagebutton3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/right"
+            android:layout_below="@id/imagebutton1"
+            android:layout_toRightOf="@id/imagebutton0"
+            android:layout_toEndOf="@id/imagebutton0"
+            />
+
+        <ImageButton
+            android:id="@+id/imagebutton4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/down"
+            android:layout_below="@id/imagebutton3"
+            android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="数字系统课程设计"
+        android:textColor="#4de891"
+        android:textSize="40sp"
+        android:layout_gravity="center"
+        android:layout_marginTop="60dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="手机蓝牙控制小车移动"
+        android:textColor="#ffd055"
+        android:textSize="25sp"
+        android:layout_gravity="center"
+        android:layout_below="@+id/text1"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:text="重力感应开关"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_change"
+        android:layout_below="@+id/text2"
+        android:layout_alignStart="@+id/text1" />
+
+    <TextView
+        android:id="@+id/textview_sensor"
+        android:text="重力传感信息"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:layout_alignBaseline="@+id/button_change"
+        android:layout_alignBottom="@+id/button_change"
+        android:layout_toEndOf="@+id/button_change"
+        android:layout_marginStart="29dp" />
+
+    <!--<LinearLayout-->
+        <!--android:id="@+id/layout_sensor"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="vertical"-->
+        <!--android:layout_below="@+id/layout_button" >-->
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="horizontal" >-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/text_x"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="1"-->
+                <!--android:text="X轴加速度" />-->
+
+            <!--<ProgressBar-->
+                <!--android:id="@+id/progressBar_X"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--style="?android:attr/progressBarStyleHorizontal"-->
+                <!--android:max="10"/>-->
+
+        <!--</LinearLayout>-->
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="horizontal" >-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/text_y"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="1"-->
+                <!--android:text="Y轴加速度" />-->
+
+            <!--<ProgressBar-->
+                <!--android:id="@+id/progressBar_Y"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--style="?android:attr/progressBarStyleHorizontal"-->
+                <!--android:max="10"/>-->
+
+        <!--</LinearLayout>-->
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="horizontal" >-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/text_z"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="1"-->
+                <!--android:text="Z轴加速度" />-->
+
+            <!--<ProgressBar-->
+                <!--android:id="@+id/progressBar_Z"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--style="?android:attr/progressBarStyleHorizontal"-->
+                <!--android:max="10"/>-->
+
+        <!--</LinearLayout>-->
+
+    <!--</LinearLayout>-->
+
+</RelativeLayout>
